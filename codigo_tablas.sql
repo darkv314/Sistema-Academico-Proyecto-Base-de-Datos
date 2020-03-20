@@ -1,29 +1,29 @@
 create table estudiante(
-	id_estudiante int not null,
+	id_estudiante int not null AUTO_INCREMENT,
     semestre int not null,
     id_persona int not null,
     importe_pagado int not null,
     importe_por_pagar int not null,
     descuento_beca double not null,
-    id_universidad int not null,
+    id_campus int not null,
     id_carrera int not null,
     primary key (id_estudiante),
     foreign key (id_persona) references persona(id_persona),
-    foreign key (id_universidad) references universidad(id_universidad),
+    foreign key (id_campus) references campus(id_campus),
     foreign key (id_carrera) references carrera(id_carrera)
     );
     
-create table universidad(
-	id_universidad int not null,
+create table campus(
+	id_campus int not null AUTO_INCREMENT,
     nombre varchar(50) not null, 
     ubicacion varchar(255) not null,
     mapa_campus varchar(255) not null,
     id_biblioteca int not null,
-    primary key (id_universidad),
+    primary key (id_campus),
     foreign key (id_biblioteca) references biblioteca(id_biblioteca)
     );
 create table biblioteca(
-	id_biblioteca int not null,
+	id_biblioteca int not null AUTO_INCREMENT,
     cod_libro int not null,
     nombre varchar(255) not null,
     autor varchar(100) not null, 
@@ -38,7 +38,7 @@ create table malla_curricular(
     foreign key (id_materia) references materia(id_materia)
     );
 create table aula(
-	id_aula int not null,
+	id_aula int not null AUTO_INCREMENT,
     nombre varchar(50) not null,
     direccion varchar(255) not null,
     capacidad int not null,
@@ -59,7 +59,7 @@ create table materia_estudiante(
     foreign key (id_materia) references materia(id_materia)
     );
 create table docente(
-	id_docente int not null,
+	id_docente int not null AUTO_INCREMENT,
     id_persona int not null,
     grado_mayor_estudio varchar(255) not null,
     saldo_pagado int not null,
