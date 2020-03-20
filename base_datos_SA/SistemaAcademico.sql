@@ -21,6 +21,8 @@ CREATE DATABASE IF NOT EXISTS sistemaacademico;
 -- Table structure for table `aula`
 --
 
+use sistemaacademico;
+
 DROP TABLE IF EXISTS `aula`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
