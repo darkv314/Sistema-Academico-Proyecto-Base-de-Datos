@@ -53,7 +53,9 @@ CREATE TABLE `biblioteca` (
   `id_biblioteca` int NOT NULL AUTO_INCREMENT,
   `cod_libro` int NOT NULL,
   `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_biblioteca`)
+  PRIMARY KEY (`id_biblioteca`),
+  KEY `cod_libro` (`cod_libro`),
+  CONSTRAINT `biblioteca_ibfk_1` FOREIGN KEY (`cod_libro`) REFERENCES `libro` (`cod_libro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -392,4 +394,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-24 20:58:33
+-- Dump completed on 2020-03-24 21:34:56
